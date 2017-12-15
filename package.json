@@ -1,0 +1,15 @@
+{
+  "name": "recommender",
+  "version": "1.0.0",
+  "description": "prototype for recommender",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "jason wilkens",
+  "license": "ISC"
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snowboard Recommender</title>
+    <link rel="stylesheet" type="text/css" href="scss/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Strait|Supermercado+One" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="node_modules/@kflorence/jquery-wizard/src/jquery.wizard.js"></script>
+    <script type="text/javascript">
+      jQuery(function($) {
+        var validate = {
+          errorPlacement: function(error, element) {
+            if (element.is(':radio') || element.is(':checkbox')) {
+              error.insertBefore(element.next());
+            } else {
+              error.insertAfter(element);
+            }
+          }
+        };
+        $('#recommender').wizard({
+          transitions: {
+            gender: function(state, action) {
+              var branch = state.step.find('[name=gender]:checked').val();
+              if (!branch) {
+                alert('Please select a value to continue');
+              } 
+              return branch;
+            },
+            skillSelect: function(state, action) {
+              var branch = state.step.find('[name=skill-level]:checked')[0].id;
+              if (!branch) {
+                alert('Please select a value to continue');
+              }
+              if (branch === 'green' || branch === 'blue') {
+                return 'all-mountain';
+              } else {
+                return 'style';
+              }
+            },
+            allMountainConfirm: function(state, action) {
+              var branch = state.step.find('[name=confirm-am]:checked').val();
+              if (!branch){
+                alert('Please select a value to continue');
+              }
+              if (branch === 'ok') {
+                return 'results';
+              } else {
+                return 'style';
+              }
+            },
+            ridingStyle: function(state, action) {
+              var branch = state.step.find('[name=riding-style]:checked').val();
+              if (!branch){
+                alert('Please select a value to continue');
+              }
+              if (branch === 'freestyle') {
+                return 'freestyle-interest';
+              } else if (branch === 'freeride') {
+                return 'freeride-interest';
+              }
+              return 'results';
+            },
+            freeridePreference: function(state, action) {
+              var branch = state.step.find('[name=freeride-interest]:checked').val();
+              if (!branch){
+                alert('Please select a value to continue');
+              }
+              if (branch === 'powder') {
+                return 'powder-preference';
+              }
+              return 'results';
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <section id="recommender">
+      <form name="recommender">
+        <div class="step">
+          <h1>Snowboard Recommender</h1>
+        </div>
+        <div class="step">
+          <p>How tall are you?</p>
+          <input type="range" min="0" max="100" step="10" value="50" />
+        </div>
+        <div class="step">
+          <button type="button" name="backward" class="backward">Back</button>
+          <p>How much do you weigh?</p>
+          <input type="range" min="0" max="100" step="10" value="50" />
+        </div>
+        <div class="step" data-state="gender">
+          <button type="button" name="backward" class="backward">Back</button>
+          <p>Would you prefer a men's or women's snowboard?</p>
+          <label for="gender-mens"><input type="radio" name="gender" value="mens" id="gender-mens" />Men's</label>
+          <label for="gender-womens"><input type="radio" name="gender" value="womens" id="gender-womens" />Women's</label>
+        </div>
+        <div class="branch" id="womens">
+          <div class="step" data-state="skill">
+            <button type="button" name="backward" class="backward">Back</button>
+            <p>What's your (Women's) boot size?</p>
+            <label for="less-than-6"><input type="radio" name="womens-boot-size" value="less-than-6" id="less-than-6" />6 or smaller</label>
+            <label for="6.5-8.5"><input type="radio" name="womens-boot-size" value="6.5-8.5" id="6.5-8.5" />6 - 8.5</label>
+            <label for="9-10"><input type="radio" name="womens-boot-size" value="9-10" id="9-10" />9 - 10</label>
+            <label for="10.5+"><input type="radio" name="womens-boot-size" value="10.5+" id="10.5+" />10.5+</label>
+          </div>
+        </div>
+        <div class="branch" id="mens">
+          <div class="step" data-state="skill">
+            <button type="button" name="backward" class="backward">Back</button>
+            <p>What's your (Men's) boot size?</p>
+            <label for="less-than-7"><input type="radio" name="mens-boot-size" value="less-than-7" id="less-than-7" />7 or smaller</label>
+            <label for="7.5-9"><input type="radio" name="mens-boot-size" value="7.5-9" id="7.5-9" />7.5 - 9</label>
+            <label for="9.5-10.5"><input type="radio" name="mens-boot-size" value="9.5-10.5" id="9.5-10.5" />9.5 - 10.5</label>
+            <label for="11-11.5"><input type="radio" name="mens-boot-size" value="11-11.5" id="11-11.5" />11 - 11.5</label>
+            <label for="12+"><input type="radio" name="mens-boot-size" value="12+" id="12+" />12+</label>
+          </div>
+        </div>
+        <div class="step" id="skill" data-state="skillSelect">
+          <button type="button" name="backward" class="backward">Back</button>
+          <p>What's your current skill level?</p>
+          <label for="green"><input type="radio" name="skill-level" value="green" id="green" />Beginner</label>
+          <label for="blue"><input type="radio" name="skill-level" vaue="blue" id="blue" />Intermediate</label>
+          <label for="black"><input type="radio" name="skill-level" value="black" id="black" />Advanced</label>
+          <label for="double-black"><input type="radio" name="skill-level" value="double-black" id="double-black" />Expert</label>
+          <label for="extreme"><input type="radio" name="skill-level" value="extreme" id="extreme" />Extreme</label>
+        </div>
+        <div class="branch" id="all-mountain">
+          <div class="step" data-state="allMountainConfirm">
+            <button type="button" name="backward" class="backward">Back</button>
+            <p>We recommend getting an "All Mountain" snowboard at this skill level</p>
+            <label for="ok"><input type="radio" name="confirm-am" value="ok" id="ok" />Sounds good</label>
+            <label for="no"><input type="radio" name="confirm-am" vaue="no" id="no" />I'd like a different board type</label>
+          </div>
+        </div>
+        <div class="step" id="style" data-state="ridingStyle">
+          <button type="button" name="backward" class="backward">Back</button>
+          <p>What's your preferred riding style?</p>
+          <label for="all-mountain"><input type="radio" name="riding-style" value="all-mountain" id="all-mountain" />All Mountain</label>
+          <label for="freestyle"><input type="radio" name="riding-style" value="freestyle" id="freestyle" />Freestyle</label>
+          <label for="freeride"><input type="radio" name="riding-style" value="freeride" id="freeride" />Freeride</label>
+        </div>
+        <div class="branch" id="freestyle-interest">
+          <div class="step" data-state="results">
+            <button type="button" name="backward" class="backward">Back</button>
+            <p>What kind of freestyle riding do you prefer?</p>
+            <label for="jumps"><input type="radio" name="freestyle-interest" value="jumps" id="jumps" />Hitting jumps and getting airborne</label>
+            <label for="park"><input type="radio" name="freestyle-interest" value="park" id="park" />Noodling on jibs in the park</label>
+            <label for="both-freestyle"><input type="radio" name="freestyle-interest" value="both-freestyle" id="both-freestyle" />Some of both</label>
+          </div>
+        </div>
+        <div class="branch" id="freeride-interest">
+          <div class="step" data-state="freeridePreference">
+            <button type="button" name="backward" class="backward">Back</button>
+            <p>What type of freeriding do you prefer?</p>
+            <label for="groomers"><input type="radio" name="freeride-interest" value="groomers" id="groomers" />Carving and bombing down groomers</label>
+            <label for="powder"><input type="radio" name="freeride-interest" value="powder" id="powder" />Surfing on untracked powder</label>
+            <label for="both-freeride"><input type="radio" name="freeride-interest" value="both-freeride" id="both-freeride" />Some of both</label>
+          </div>
+        </div>
+        <div class="branch" id="powder-preference">
+          <div class="step" data-state="results">
+            <button type="button" name="backward" class="backward">Back</button>
+            <p>What's more important to you when riding powder?</p>
+            <label for="control"><input type="radio" name="powder-preference" value="control" id="control" />Pure control</label>
+            <label for="float"><input type="radio" name="powder-preference" value="float" id="float" />Tons of float</label>
+          </div>
+        </div>
+        <div class="step" id="results">
+          <button type="button" name="backward" class="backward">Back</button>
+          <h1>Recommended boards</h1>
+          <ul>
+            <li>Snowboard 1</li>
+            <li>Snowboard 2</li>
+            <li>Snowboard 3</li>
+          </ul>
+        </div>
+        <button type="button" name="forward" class="forward">Continue</button>
+      </form>
+    </section>
+  </body>
+</html>
