@@ -4,9 +4,22 @@ body {
   font-family: 'Strait', sans-serif; }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Supermercado One', cursive; }
+  font-family: 'Supermercado One', cursive;
+  font-size: 2em;
+  line-height: 2em; }
 
-label {
-  display: block; }
+label, p {
+  display: block;
+  font-size: 1.2em;
+  line-height: 1.2em; }
+
+button {
+  padding: .5rem 1rem;
+  font-family: 'Strait', sans-serif;
+  font-size: 1em;
+  color: #2D1573;
+  border-radius: .2rem;
+  border: .1rem solid white;
+  background-color: white; }
 
 /*# sourceMappingURL=main.css.map */

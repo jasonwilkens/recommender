@@ -1,14 +1,4 @@
 //Variables
-$black0: #0b0c0e;
-$black1: #16181d;
-$black2: #24272d;
-$black3: #363a43;
-$black4: #484e59;
-$black5: #5d636e;
-$black6: #818792;
-$black7: #a3a7af;
-$black8: #c7cacf;
-$black9: #ecedef;
 
 $blue-white: #f2f5ff;
 $dark-blue: #2D1573;
@@ -21,8 +11,22 @@ body {
 
 h1,h2,h3,h4,h5 {
   font-family: 'Supermercado One', cursive;
+  font-size: 2em;
+  line-height: 2em;
 }
 
-label {
+label, p {
   display: block;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+button {
+  padding: .5rem 1rem;
+  font-family: 'Strait', sans-serif;
+  font-size: 1em;
+  color: $dark-blue;
+  border-radius: .2rem;
+  border: .1rem solid white;
+  background-color: white;
 }
