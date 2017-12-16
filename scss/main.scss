@@ -1,20 +1,29 @@
 //Variables
 
-$blue-white: #f2f5ff;
-$gray-blue: #626E80;
+$blue-white: #F5F7FC;
+$gray-blue: #7794BF;
 $dark-blue: #2D1573;
 
 body {
   background-color: $blue-white;
-  color: $gray-blue;
+  color: $dark-blue;
   font-family: 'Strait', sans-serif;
 }
 
-h1 {
+h1, h2 {
+  color: $gray-blue;
   font-family: 'Supermercado One', cursive;
+  text-shadow: .05em .05em $dark-blue;
+}
+
+h1 {
   font-size: 4em;
   line-height: 2em;
-  text-shadow: .05em .05em $dark-blue;
+}
+
+h2 {
+  font-size: 3em;
+  line-height: 1.5em;
 }
 
 label, p {
@@ -29,7 +38,7 @@ button {
   padding: .5rem 1rem;
   font-family: 'Strait', sans-serif;
   font-size: 1.2em;
-  color: $gray-blue;
+  color: $dark-blue;
   border-radius: .2rem;
   border: .1rem solid white;
   background-color: white;
