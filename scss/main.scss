@@ -2,15 +2,16 @@
 
 $blue-white: #F5F7FC;
 $gray-blue: #7794BF;
-$dark-blue: #2D1573;
+$dark-blue: #373C57;
 
 body {
   background-color: $blue-white;
   color: $dark-blue;
-  font-family: 'Strait', sans-serif;
+  font-family: 'Arimo', sans-serif;
 }
 
 h1, h2 {
+  margin: 0;
   color: $gray-blue;
   font-family: 'Supermercado One', cursive;
   text-shadow: .05em .05em $dark-blue;
@@ -36,7 +37,7 @@ label, p {
 button {
   display: block;
   padding: .5rem 1rem;
-  font-family: 'Strait', sans-serif;
+  font-family: 'Arimo', sans-serif;;
   font-size: 1.2em;
   color: $dark-blue;
   border-radius: .2rem;

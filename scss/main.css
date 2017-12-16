@@ -1,12 +1,13 @@
 body {
   background-color: #F5F7FC;
-  color: #2D1573;
-  font-family: 'Strait', sans-serif; }
+  color: #373C57;
+  font-family: 'Arimo', sans-serif; }
 
 h1, h2 {
+  margin: 0;
   color: #7794BF;
   font-family: 'Supermercado One', cursive;
-  text-shadow: 0.05em 0.05em #2D1573; }
+  text-shadow: 0.05em 0.05em #373C57; }
 
 h1 {
   font-size: 4em;
@@ -25,9 +26,9 @@ label, p {
 button {
   display: block;
   padding: .5rem 1rem;
-  font-family: 'Strait', sans-serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 1.2em;
-  color: #2D1573;
+  color: #373C57;
   border-radius: .2rem;
   border: .1rem solid white;
   background-color: white;
