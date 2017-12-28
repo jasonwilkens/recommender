@@ -1,7 +1,7 @@
 body {
   background-color: #F5F7FC;
   color: #373C57;
-  font-family: 'Arimo', sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
 
 h1, h2 {
   margin: 0;
@@ -24,13 +24,14 @@ label, p {
   letter-spacing: .05em; }
 
 button {
+  cursor: pointer;
   display: block;
   padding: .5rem 1rem;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
   color: #373C57;
   border-radius: .2rem;
-  border: .1rem solid white;
+  border: 0.1rem solid #dfe6f0;
   background-color: white;
   letter-spacing: .05em; }
 

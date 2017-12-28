@@ -7,7 +7,7 @@ $dark-blue: #373C57;
 body {
   background-color: $blue-white;
   color: $dark-blue;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2 {
@@ -35,13 +35,14 @@ label, p {
 }
 
 button {
+  cursor: pointer;
   display: block;
   padding: .5rem 1rem;
-  font-family: 'Arimo', sans-serif;;
+  font-family: 'Montserrat', sans-serif;;
   font-size: 1.2em;
   color: $dark-blue;
   border-radius: .2rem;
-  border: .1rem solid white;
+  border: .1rem solid lighten($gray-blue, 30%);
   background-color: white;
   letter-spacing: .05em;
 }
