@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Snowboard Quiz</title>
+    <title>Board Liker</title>
     <link rel="stylesheet" type="text/css" href="scss/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Supermercado+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Supermercado+One" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
@@ -81,9 +81,9 @@
     <section id="recommender">
       <form name="recommender">
         <div class="step">
-          <h1>Snowboard Quiz</h1>
+          <h1>Board Liker</h1>
+          <p>Which of the best new snowboards is right for you?<br/>A few quick questions are all it takes to find out.</p>
           <button type="button" name="forward" class="forward">Start</button>
-          <h3 class="subhead">&copy; Icecap</h3>
         </div>
         <div class="step">
           <button type="button" name="backward" class="backward" tabindex="1">Back</button>
@@ -91,6 +91,7 @@
           <div class="input-area">
             <input type="range" min="0" max="100" step="10" value="50" />
           </div>
+          <p class="detail">Your height and weight suggest your ideal board size.</p>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="step">
@@ -99,6 +100,7 @@
           <div class="input-area">
             <input type="range" min="0" max="100" step="10" value="50" />
           </div>
+          <p class="detail">Your height and weight suggest your ideal board size.</p>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="step" data-state="gender">
@@ -110,6 +112,7 @@
             <input type="radio" name="gender" value="womens" id="gender-womens" />
             <label for="gender-womens">Women&#8217;s</label>
           </div>
+          <p class="detail">Women&#8217;s boards tend to be lighter and narrower than men&#8217;s boards of equal length.</p>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="branch" id="womens">
@@ -126,6 +129,7 @@
               <input type="radio" name="womens-boot-size" value="10.5+" id="10.5+" />
               <label for="10.5+">10.5+</label>
             </div>
+            <p class="detail">You&#8217;ll need a board wide enough for your boots.</p>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>
@@ -145,6 +149,7 @@
               <input type="radio" name="mens-boot-size" value="12+" id="12+" />
               <label for="12+">12+</label>
             </div>
+            <p class="detail">You&#8217;ll need a board wide enough for your boots.</p>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>
@@ -163,18 +168,20 @@
             <input type="radio" name="skill-level" value="extreme" id="extreme" />
             <label for="extreme">Extreme</label>
           </div>
+          <p class="detail">Your current skill level helps determine your ideal shape and style.</p>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="branch" id="all-mountain">
           <div class="step" data-state="allMountainConfirm">
             <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-            <p>We recommend getting an &ldquo;All Mountain&rdquo; snowboard at this skill level</p>
+            <p>We recommend getting an &ldquo;All Mountain&rdquo; snowboard at this skill level.</p>
             <div class="input-area">
               <input type="radio" name="confirm-am" value="ok" id="ok" />
               <label for="ok">Sounds good</label>
               <input type="radio" name="confirm-am" vaue="no" id="no" />
               <label for="no">I'd like a different board type</label>
             </div>
+            <p class="detail">With an All Mountain board, you can explore different styles of riding while you continue to improve your skills.</p>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>
@@ -189,6 +196,7 @@
             <input type="radio" name="riding-style" value="freestyle" id="freestyle" />
             <label for="freestyle">Freestyle</label>
           </div>
+          <p class="detail">Freeride boards are for carving groomed runs or surfing powder. Freestyle boards are for the terrain park and hitting jumps. All Mountain boards can handle any part of the mountain.</p>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="branch" id="freestyle-interest">
@@ -203,6 +211,7 @@
               <input type="radio" name="freestyle-interest" value="both-freestyle" id="both-freestyle" />
               <label for="both-freestyle">Some of both</label>
             </div>
+            <p class="detail">A park board will be shorter and softer with less camber than a board for hitting jumps.</p>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>
@@ -218,6 +227,7 @@
               <input type="radio" name="freeride-interest" value="both-freeride" id="both-freeride" />
               <label for="both-freeride">Some of both</label>
             </div>
+            <p class="detail">A powder board will help you stay afloat, a carving board will have the best edge hold.</p>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>
@@ -231,6 +241,7 @@
               <input type="radio" name="powder-preference" value="control" id="control" />
               <label for="control">Pure control</label>
             </div>
+            <p class="detail">A rocker or combination camber will help you float, a regular camber provides more control.</p>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>

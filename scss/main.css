@@ -1,9 +1,20 @@
+p, h1, h2, h3, ul {
+  width: 100%; }
+
+@media screen and (min-width: 36rem) {
+  p, h1, h2, h3, ul {
+    width: 36rem;
+    margin: auto; }
+
+  p.detail {
+    width: 24rem; } }
 body {
-  background-color: #F5F7FC;
-  color: #373C57;
-  font-family: 'Noto Sans', sans-serif; }
+  background-color: white;
+  color: #1957FF;
+  font-family: 'Source Sans Pro', sans-serif; }
 
 section#recommender {
+  position: relative;
   width: 100%;
   max-width: 70rem;
   margin: auto;
@@ -11,9 +22,9 @@ section#recommender {
   text-align: center; }
 
 h1, h2, h3 {
-  color: #7794BF;
+  color: #1957FF;
   font-family: 'Supermercado One', cursive;
-  text-shadow: 0.05em 0.05em #373C57; }
+  text-shadow: 0.05em 0.05em #FF0CFF; }
 
 h1 {
   margin-top: 15vh;
@@ -33,31 +44,40 @@ label, p, li {
   letter-spacing: .05em; }
 
 .subhead {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
   margin: .25em 0;
-  color: #dfe6f0;
-  text-shadow: 0.05em 0.05em #7794BF; }
+  color: #dccbf9;
+  text-shadow: 0.05em 0.05em #FF0CFF; }
+
+p.detail {
+  padding: .5em 1em;
+  background-color: #F2F2F2;
+  border-radius: .3rem;
+  font-size: .9em;
+  text-align: left; }
 
 button {
-  border: none;
   margin: auto;
   cursor: pointer;
   display: block;
   padding: .5rem 1rem;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.2em;
-  color: #373C57;
+  color: #1957FF;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   border-bottom-left-radius: 1rem;
   border-top-left-radius: 1rem;
-  border: 0.1rem solid #dfe6f0;
+  border: 0.15rem solid #1957FF;
   background-color: white;
   letter-spacing: .05em; }
   button:hover {
-    background-color: #e1e7f6;
+    background-color: #ffa5ff;
     transition: all 250ms ease; }
   button:focus {
-    border-color: #7794BF; }
+    border-color: #0BCFE8; }
 
 label {
   cursor: pointer; }
@@ -76,22 +96,23 @@ input[type="radio"] + label:before {
   content: '';
   background-color: white;
   border-radius: 100%;
-  border: 0.1rem solid #dfe6f0;
+  border: 0.15rem solid #FF0CFF;
   display: inline-block;
   width: .9em;
   height: .9em;
   position: relative;
-  top: .15rem;
+  top: .3rem;
   margin-right: .5em;
   text-align: center;
-  transition: all 250ms ease; }
+  transition: all 250ms ease;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0px #7E43E8; }
 
 input[type="radio"]:checked + label:before {
-  background-color: #7794BF;
-  box-shadow: inset 0 0 0 .2rem white; }
+  background-color: #ffa5ff;
+  box-shadow: inset 0 0 0 0.2rem white, 0.1rem 0.1rem 0.1rem 0px #7E43E8; }
 
 input[type="radio"]:focus + label:before {
-  border-color: #7794BF; }
+  border-color: #FF0CFF; }
 
 .backward {
   margin: inherit;
@@ -103,50 +124,18 @@ input[type="radio"]:focus + label:before {
 
 .forward {
   padding: 1rem 2rem;
-  min-width: 10rem;
+  min-width: 14rem;
   border-radius: 0;
   border: none;
-  border-top: .3rem solid #F5A84E;
-  border-bottom: .3rem solid #F5C311;
-  border-image: linear-gradient(to right, #F5A84E 0%, #F5C311 100%);
-  border-image-slice: 1;
-  position: relative;
+  border: 0.3rem solid #FF0CFF;
   box-sizing: border-box;
-  box-shadow: 0.2rem 0.2rem 0.1rem 0px #7794BF; }
-  .forward:before, .forward:after {
-    background-color: white;
-    box-shadow: 0.25rem 0.25rem 0.1rem 0px #7794BF;
-    background-image: linear-gradient(to right, #FAF4E3 0%, #FFF 20%);
-    box-sizing: border-box;
-    content: '';
-    display: block;
-    width: 2em;
-    height: calc(100% + .6rem);
-    border-radius: 1rem 0 0 1rem;
-    border: .25rem solid #F5A84E;
-    position: absolute;
-    border-right: none;
-    left: -1.95em;
-    top: -.3rem;
-    transition: all 250ms ease;
-    z-index: -1; }
-  .forward:after {
-    background-image: linear-gradient(to right, #FFF 50%, #FAF4E3 100%);
-    border-radius: 0 2rem 2rem 0;
-    border: .25rem solid #F5C311;
-    position: absolute;
-    border-left: none;
-    left: auto;
-    right: -1.95em;
-    top: -.3rem;
-    z-index: 100; }
-  .forward:hover {
-    background-image: none;
-    background-color: #e1e7f6;
-    transition: all 250ms ease; }
-    .forward:hover:after, .forward:hover:before {
-      background-image: none;
-      background-color: #e1e7f6; }
+  box-shadow: 0.2rem 0.2rem 0.1rem 0px #7E43E8;
+  text-shadow: 0.05em 0.05em #FF0CFF;
+  border-radius: 1rem 2rem 2rem 1rem;
+  margin-bottom: 1px; }
+  .forward:active {
+    margin-top: 1px;
+    margin-bottom: 0; }
 
 ul {
   display: inline-block;
