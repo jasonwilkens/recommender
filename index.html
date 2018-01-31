@@ -82,6 +82,7 @@
       <form name="recommender">
         <div class="step">
           <h1>Board Liker</h1>
+          <h2>2018/2019 Season</h2>
           <p>Which of the best new snowboards is right for you?<br/>A few quick questions are all it takes to find out.</p>
           <button type="button" name="forward" class="forward">Start</button>
         </div>
@@ -89,36 +90,44 @@
           <button type="button" name="backward" class="backward" tabindex="1">Back</button>
           <p>How tall are you?</p>
           <div class="input-area">
+            <p class="slider-input-feedback">6&prime; 2&Prime;</p>
+            <p class="metric-feedback">(188 <abbr>cm</abbr>)</p>
             <input type="range" min="0" max="100" step="10" value="50" />
           </div>
-          <p class="detail">Your height and weight suggest your ideal board size.</p>
+          <div>
+            <span class="detail">Your height and weight suggest your ideal board size.</span>
+          </div>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="step">
           <button type="button" name="backward" class="backward" tabindex="1">Back</button>
           <p>How much do you weigh?</p>
           <div class="input-area">
+            <p class="slider-input-feedback">180 <abbr>lbs</abbr></p>
+            <p class="metric-feedback">(82 <abbr>kg</abbr>)</p>
             <input type="range" min="0" max="100" step="10" value="50" />
           </div>
-          <p class="detail">Your height and weight suggest your ideal board size.</p>
+          <div>
+            <span class="detail">Your height and weight suggest your ideal board size.</span>
+          </div>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="step" data-state="gender">
           <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-          <p>Would you prefer a men&#8217;s or women&#8217;s snowboard?</p>
+          <p>Would you prefer a men&apos;s or women&apos; snowboard?</p>
           <div class="input-area">
             <input type="radio" name="gender" value="mens" id="gender-mens" />
-            <label for="gender-mens">Men&#8217;s</label>
+            <label for="gender-mens">Men&apos;s</label>
             <input type="radio" name="gender" value="womens" id="gender-womens" />
-            <label for="gender-womens">Women&#8217;s</label>
+            <label for="gender-womens">Women&apos;s</label>
           </div>
-          <p class="detail">Women&#8217;s boards tend to be lighter and narrower than men&#8217;s boards of equal length.</p>
+          <p class="detail">Women&apos;s boards tend to be lighter and narrower than men&apos;s boards of equal length.</p>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="branch" id="womens">
           <div class="step" data-state="skill">
             <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-            <p>What&#8217;s your (Women&#8217;s) shoe size?</p>
+            <p>What&apos;s your (Women&apos;s) shoe size?</p>
             <div class="input-area">
               <input type="radio" name="womens-boot-size" value="less-than-6" id="less-than-6" />
               <label for="less-than-6">6 or smaller</label>
@@ -129,14 +138,16 @@
               <input type="radio" name="womens-boot-size" value="10.5+" id="10.5+" />
               <label for="10.5+">10.5+</label>
             </div>
-            <p class="detail">You&#8217;ll need a board wide enough for your boots.</p>
+            <div>
+              <span class="detail">You&apos;ll need a board wide enough for your boots.</span>
+            </div>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>
         <div class="branch" id="mens">
           <div class="step" data-state="skill">
             <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-            <p>What&#8217;s your (Men&#8217;s) shoe size?</p>
+            <p>What&apos;s your (Men&apos;s) shoe size?</p>
             <div class="input-area">
               <input type="radio" name="mens-boot-size" value="less-than-7" id="less-than-7" />
               <label for="less-than-7">7 or smaller</label>
@@ -149,13 +160,15 @@
               <input type="radio" name="mens-boot-size" value="12+" id="12+" />
               <label for="12+">12+</label>
             </div>
-            <p class="detail">You&#8217;ll need a board wide enough for your boots.</p>
+            <div>
+              <span class="detail">You&apos;ll need a board wide enough for your boots.</span>
+            </div>
             <button type="button" name="forward" class="forward">Continue</button>
           </div>
         </div>
         <div class="step" id="skill" data-state="skillSelect">
           <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-          <p>What&#8217;s your current skill level?</p>
+          <p>What&apos;s your current skill level?</p>
           <div class="input-area">
             <input type="radio" name="skill-level" value="green" id="green" />
             <label for="green">Beginner</label>
@@ -168,7 +181,9 @@
             <input type="radio" name="skill-level" value="extreme" id="extreme" />
             <label for="extreme">Extreme</label>
           </div>
-          <p class="detail">Your current skill level helps determine your ideal shape and style.</p>
+          <div>
+            <span class="detail">Your skill level helps determine your ideal shape and style.</span>
+          </div>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="branch" id="all-mountain">
@@ -187,7 +202,7 @@
         </div>
         <div class="step" id="style" data-state="ridingStyle">
           <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-          <p>What&#8217;s your preferred riding style?</p>
+          <p>What&apos;s your preferred riding style?</p>
           <div class="input-area">
             <input type="radio" name="riding-style" value="all-mountain" id="all-mountain-style" />
             <label for="all-mountain-style">All Mountain</label>
@@ -196,7 +211,7 @@
             <input type="radio" name="riding-style" value="freestyle" id="freestyle" />
             <label for="freestyle">Freestyle</label>
           </div>
-          <p class="detail">Freeride boards are for carving groomed runs or surfing powder. Freestyle boards are for the terrain park and hitting jumps. All Mountain boards can handle any part of the mountain.</p>
+          <p class="detail">Freeride boards are for carving groomed runs or surfing powder. Freestyle boards are for the terrain park and hitting jumps. <br />All Mountain boards can handle any part of the mountain.</p>
           <button type="button" name="forward" class="forward">Continue</button>
         </div>
         <div class="branch" id="freestyle-interest">
