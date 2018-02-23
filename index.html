@@ -8,74 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="node_modules/@kflorence/jquery-wizard/src/jquery.wizard.js"></script>
-    <script type="text/javascript">
-      jQuery(function($) {
-        var validate = {
-          errorPlacement: function(error, element) {
-            if (element.is(':radio') || element.is(':checkbox')) {
-              error.insertBefore(element.next());
-            } else {
-              error.insertAfter(element);
-            }
-          }
-        };
-        $('#recommender').wizard({
-          transitions: {
-            gender: function(state, action) {
-              var branch = state.step.find('[name=gender]:checked').val();
-              if (!branch) {
-                alert('Please select a value to continue');
-              } 
-              return branch;
-            },
-            skillSelect: function(state, action) {
-              var branch = state.step.find('[name=skill-level]:checked')[0].id;
-              if (!branch) {
-                alert('Please select a value to continue');
-              }
-              if (branch === 'green' || branch === 'blue') {
-                return 'all-mountain';
-              } else {
-                return 'style';
-              }
-            },
-            allMountainConfirm: function(state, action) {
-              var branch = state.step.find('[name=confirm-am]:checked').val();
-              if (!branch){
-                alert('Please select a value to continue');
-              }
-              if (branch === 'ok') {
-                return 'results';
-              } else {
-                return 'style';
-              }
-            },
-            ridingStyle: function(state, action) {
-              var branch = state.step.find('[name=riding-style]:checked').val();
-              if (!branch){
-                alert('Please select a value to continue');
-              }
-              if (branch === 'freestyle') {
-                return 'freestyle-interest';
-              } else if (branch === 'freeride') {
-                return 'freeride-interest';
-              }
-              return 'results';
-            },
-            freeridePreference: function(state, action) {
-              var branch = state.step.find('[name=freeride-interest]:checked').val();
-              if (!branch){
-                alert('Please select a value to continue');
-              }
-              if (branch === 'powder') {
-                return 'powder-preference';
-              }
-              return 'results';
-            }
-          }
-        });
-      });
-    </script>
+    <script type="text/javascript" src="wizard.js"></script>
   </head>
   <body>
     <section id="recommender">
@@ -92,7 +25,7 @@
           <div class="input-area">
             <p class="slider-input-feedback">6&prime; 2&Prime;</p>
             <p class="metric-feedback">(188 <abbr>cm</abbr>)</p>
-            <input type="range" min="0" max="100" step="10" value="50" />
+            <input id="slider-height" name="height" type="range" min="0" max="100" step="10" value="50" />
           </div>
           <div>
             <span class="detail">Your height and weight suggest your ideal board size.</span>
@@ -105,7 +38,7 @@
           <div class="input-area">
             <p class="slider-input-feedback">180 <abbr>lbs</abbr></p>
             <p class="metric-feedback">(82 <abbr>kg</abbr>)</p>
-            <input type="range" min="0" max="100" step="10" value="50" />
+            <input id="slider-weight" name="weight" type="range" min="0" max="100" step="10" value="50" />
           </div>
           <div>
             <span class="detail">Your height and weight suggest your ideal board size.</span>
@@ -272,4 +205,5 @@
       </form>
     </section>
   </body>
+  <script type="text/javascript" src="app.js"></script>
 </html>
