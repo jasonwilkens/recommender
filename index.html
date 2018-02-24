@@ -25,7 +25,7 @@
           <div class="input-area">
             <p class="slider-input-feedback" id="height-imperial">5&prime; 6&Prime;</p>
             <p class="metric-feedback" id="height-metric">(168 <abbr>cm</abbr>)</p>
-            <input id="slider-height" name="height" type="range" min="0" max="100" step="10" value="50" />
+            <input id="slider-height" name="height" type="range" min="0" max="130" step="5" value="70" />
           </div>
           <div>
             <span class="detail">Your height and weight suggest your ideal board size.</span>
@@ -38,7 +38,7 @@
           <div class="input-area">
             <p class="slider-input-feedback" id="weight-imperial">150 <abbr>lbs</abbr></p>
             <p class="metric-feedback" id="weight-metric">(68 <abbr>kg</abbr>)</p>
-            <input id="slider-weight" name="weight" type="range" min="0" max="100" step="10" value="50" />
+            <input id="slider-weight" name="weight" type="range" min="0" max="170" step="5" value="70" />
           </div>
           <div>
             <span class="detail">Your height and weight suggest your ideal board size.</span>
@@ -60,16 +60,11 @@
         <div class="branch" id="womens">
           <div class="step" data-state="skill">
             <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-            <p>What&apos;s your (Women&apos;s) shoe size?</p>
+            <p>What&apos;s your (women&apos;s) shoe size?</p>
             <div class="input-area">
-              <input type="radio" name="womens-boot-size" value="less-than-6" id="less-than-6" />
-              <label for="less-than-6">6 or smaller</label>
-              <input type="radio" name="womens-boot-size" value="6.5-8.5" id="6.5-8.5" />
-              <label for="6.5-8.5">6 - 8.5</label>
-              <input type="radio" name="womens-boot-size" value="9-10" id="9-10" />
-              <label for="9-10">9 - 10</label>
-              <input type="radio" name="womens-boot-size" value="10.5+" id="10.5+" />
-              <label for="10.5+">10.5+</label>
+              <p class="slider-input-feedback" id="womens-imperial">8 <abbr>US</abbr></p>
+              <p class="metric-feedback" id="womens-metric">(38-39 <abbr>Euro</abbr>)</p>
+              <input id="slider-womens-boot-size" name="womens" type="range" min="0" max="80" step="5" value="40" />
             </div>
             <div>
               <span class="detail">You&apos;ll need a board wide enough for your boots.</span>
@@ -80,18 +75,11 @@
         <div class="branch" id="mens">
           <div class="step" data-state="skill">
             <button type="button" name="backward" class="backward" tabindex="1">Back</button>
-            <p>What&apos;s your (Men&apos;s) shoe size?</p>
+            <p>What&apos;s your (men&apos;s) shoe size?</p>
             <div class="input-area">
-              <input type="radio" name="mens-boot-size" value="less-than-7" id="less-than-7" />
-              <label for="less-than-7">7 or smaller</label>
-              <input type="radio" name="mens-boot-size" value="7.5-9" id="7.5-9" />
-              <label for="7.5-9">7.5 - 9</label>
-              <input type="radio" name="mens-boot-size" value="9.5-10.5" id="9.5-10.5" />
-              <label for="9.5-10.5">9.5 - 10.5</label>
-              <input type="radio" name="mens-boot-size" value="11-11.5" id="11-11.5" />
-              <label for="11-11.5">11 - 11.5</label>
-              <input type="radio" name="mens-boot-size" value="12+" id="12+" />
-              <label for="12+">12+</label>
+              <p class="slider-input-feedback" id="mens-imperial">10 <abbr>US</abbr></p>
+              <p class="metric-feedback" id="mens-metric">(43 <abbr>Euro</abbr>)</p>
+              <input id="slider-mens-boot-size" name="mens" type="range" min="0" max="100" step="5" value="40" />
             </div>
             <div>
               <span class="detail">You&apos;ll need a board wide enough for your boots.</span>
