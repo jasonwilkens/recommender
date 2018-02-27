@@ -266,5 +266,14 @@ function initialAnswers() {
   }
 }
 
+function populateRangeHints() {
+  var ranges = Array.from(document.querySelectorAll('input[type="range"]'));
+  for (i=0; i<ranges.length; i++) {
+    document.querySelector('#' + ranges[i].name + '-imperial').innerHTML = usaMaps[ranges[i].name][ranges[i].value];
+    document.querySelector('#' + ranges[i].name + '-metric').innerHTML = '(' + euMaps[ranges[i].name][ranges[i].value] + ')';
+  }
+}
+
+populateRangeHints();
 initialAnswers();
 el.addEventListener("input", updateVal, true);
